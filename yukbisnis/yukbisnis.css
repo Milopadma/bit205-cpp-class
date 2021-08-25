@@ -1,0 +1,456 @@
+/* --------------PERSONAL CSS----------------- */
+/*CSS Animations*/
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes navbar {
+  0% {
+    transform: translateY(-1000%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideInFromTop2 {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-200%);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(1000%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes blur {
+  0%,
+  90% {
+    filter: blur(10px);
+  }
+
+  50% {
+    filter: blur(25px);
+  }
+}
+
+/*Normal CSS*/
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #032f3a; /*comment*/
+  opacity: "0";
+  height: 300%; /* percentages only work when parent has value */
+}
+
+.content::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  background-image: url("sky.png");
+  /*Adding parallax effect*/
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  width: 100%;
+  height: 100%;
+  filter: blur(15px);
+  animation: blur 4s ease 0s 1 normal forwards;
+}
+
+.content {
+  z-index: 2;
+  margin-top: 2vw;
+}
+
+.unifont {
+  font-family: "SF Pro Display", "Pro Display", "SF Pro Icons", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+}
+
+.colorblue {
+  color: #00ffffe5;
+}
+
+header {
+  font-weight: 400;
+  font-size: 7.6vw;
+  letter-spacing: -0.1em;
+  stroke-width: 2px;
+  animation: 0.6s ease-out 0s 1 slideInFromTop;
+  cursor: default;
+}
+
+input[type="text"]:focus {
+  border-color: red;
+}
+
+.relativepos1 {
+  position: relative;
+  left: 4%;
+  display: inline-block;
+  margin-left: 2%;
+  padding: 20px;
+}
+
+/* removes x overflow, horizontal scrollbar */
+* {
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: 180%;
+  letter-spacing: -0.05em;
+  transition: all 0.5s;
+}
+
+.title:hover {
+  font-size: 190%;
+  letter-spacing: -0.02em;
+}
+
+.paddingbackground {
+  background-color: #0e3958;
+  opacity: 0.8;
+  border-radius: 25px;
+  display: table;
+  margin: 0 auto;
+  width: 110%;
+  padding-top: 10%;
+  padding-left: 12vw;
+  padding-right: 12vw;
+  padding-bottom: 35vw;
+}
+
+.content1 {
+  font-weight: 1000;
+  font-size: 15%;
+  letter-spacing: -0.07em;
+  stroke-width: 2px;
+  animation: 0.5s ease-out 0s 1 slideInFromTop2;
+}
+
+.gradient {
+  background-color: white;
+  display: inline-block;
+  height: 1000px;
+  background: linear-gradient(170deg, lightblue 29%, black 80%);
+}
+
+.radialgradient {
+  background: linear-gradient(
+    68deg,
+    #1d8bce 0%,
+    #249edc 16%,
+    #44b2db 33%,
+    #67c6dc 50%,
+    #8cd7df 66%,
+    #b5e6e6 83%,
+    #e2f3f1 100%
+  );
+}
+
+/* specificity and efficiency selectors */
+.content1 > dl > dd {
+  padding: 8px 3vw;
+}
+
+.content1 > dl > dd:hover {
+  background-color: #ffff;
+  color: black;
+  cursor: text;
+}
+
+/*centering*/
+.center {
+  display: table;
+  margin: 0 auto;
+}
+
+/* NAV AND ITS BUTTONS */
+nav {
+  position: fixed;
+  margin: 0 auto;
+  text-align: center;
+  /* left: 50%; */
+  top: 3.6%;
+  /* background-color: rgb(32, 130, 241) ; */
+  /* transform: translate(-50%, -50%); */
+  padding: 1vw 6vw 1vw;
+  margin: 2vw;
+  animation: 0.9s ease-out 0s 1 navbar;
+  letter-spacing: -0.1em;
+  font-size: 120%;
+  overflow: visible;
+}
+
+.navspan {
+  border: 2px solid rgb(0, 81, 255);
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0.2em;
+  margin: 2vw;
+  padding: 0.2vw 2vw 0.2vw 2vw; /* top right bottom left*/
+  cursor: pointer;
+}
+
+.navButton {
+  padding: 0.2vw 2vw 0.2vw 2vw;
+  transition: all 0.5s;
+  /*Animations upon hover*/
+}
+.navButton:hover {
+  padding: 0.2vw 3vw 0.2vw 3vw;
+}
+
+@media (max-width: 518px) {
+  nav {
+    display: none;
+  }
+}
+
+/* ARTICLE AND ITS CONTENTS */
+.article_content {
+  display: table;
+  margin: 0 auto;
+  height: 30vw;
+  width: 99%;
+  border-radius: 25px;
+}
+
+.footer1 {
+  position: fixed;
+  bottom: 0.1vw;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-color: #0e3958;
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+.shadowed {
+  animation: 0.6s ease-in-out 1s 1 shadow forwards;
+}
+
+@keyframes shadow {
+  0% {
+    text-shadow: 0px 0px 0 white;
+  }
+  100% {
+    text-shadow: -8px 5px 0 white;
+  }
+}
+
+.cards {
+  display: inline-block;
+  background-color: white;
+  height: 300px;
+  width: 225px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 20px;
+  overflow-y: hidden;
+  transition: all 250ms ease-in-out;
+}
+
+.cards:hover {
+  box-shadow: 10px 10px 0 black;
+  height: 310px;
+  width: 230px;
+  cursor: pointer;
+  font-size: 110%;
+}
+
+.cardtext {
+  padding: 20px;
+  color: black;
+}
+
+.cardtitle {
+  padding-bottom: 2%;
+  font-size: 125%;
+  text-align: center;
+}
+
+.cardcontent {
+  text-align: center;
+  font-size: 90%;
+  text-overflow: ellipsis;
+}
+
+.cardfooter {
+  font-size: 100%;
+}
+
+.logo {
+  display: inline-block;
+  /* To move an element outside of its parent's zones, relative to its set position */
+  position: relative;
+  bottom: -25px;
+  left: -25px;
+}
+
+.glow {
+  box-shadow: rgb(0 185 187 / 54%) 0px 0px 32px;
+}
+
+.flexboxparent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  padding: 1%;
+  align-items: stretch;
+}
+
+.box1,
+.box2,
+.box3 {
+  border: 2px solid blue;
+  margin: 10px;
+  border-radius: 5px;
+  flex-basis: 50%;
+  flex-shrink: 1;
+  flex-grow: 0;
+}
+
+/* Responsive Web Design */
+#test1 {
+  /* background-color: red; */
+  color: black;
+}
+
+/* For mobile devices (iPhone X) */
+/* @media (min-width: 375px) {
+  #test1 {
+    background-color: white;
+  }
+} */
+/* For tablets */
+/* @media (min-width: 720px) {
+  #test1 {
+    background-color: yellow;
+  }
+} */
+/* For desktops */
+/* @media (min-width: 768px) {
+  #test1 {
+    background-color: red;
+  }
+} */
+
+/* Hide nav and header when print */
+@media print {
+  .nav,
+  .header {
+    display: none;
+  }
+}
+
+/* ------------------------------------------ */
+/*             EVERYTHING BELOW IS            */
+/*             FOR actualModal.html           */
+/* ------------------------------------------ */
+
+#oneModal {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#oneModal.active {
+  opacity: 1;
+}
+
+#twoModal {
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+
+#twoModal.active {
+  opacity: 1;
+}
+
+#thirdModal {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#thirdModal.active {
+  opacity: 1;
+}
+
+#modalButton {
+  font-family: Arial;
+  display: inline-block;
+  color: white;
+  border-color: white;
+  border: 0.16em solid #000000;
+  margin: 0 0.3em 0.3em 0;
+  padding: 0.5em 3em;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buttonOpen {
+  font-size: 1em;
+  transition: all 0.1s ease-in-out;
+}
+.buttonOpen:hover {
+  font-size: 1.2em;
+}
+
+body header h1 {
+  color: white;
+  font-size: 2em;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 833px) {
+  .cardWrapper {
+    display: initial;
+  }
+}
