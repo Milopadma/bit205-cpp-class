@@ -1,38 +1,177 @@
 /*---------------PERSON FUNCTIONALITY----------------- */
-function nextPerson() {
-  let rPersonAPI = {};
-  /* need to select results(array) from Object, deconstruct the returned json
+function wait(ms) {
+  var start = new Date().getTime();
+  var end = start;
+  while (end < start + ms) {
+    end = new Date().getTime();
+  }
+}
+
+function PERSON() {
+  /* ------------------------CARD 1---------------------------- */
+   function nextPerson1() {
+    let rPersonAPI1 = {};
+    /* need to select results(array) from Object, deconstruct the returned json
 and take name, email address, birthday etc. */
-  fetch("https://randomuser.me/api/")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (response) {
-      rPersonAPI = response;
-      var result = rPersonAPI.results;
-      var gender = result.map((x) => x.gender)[0];
-      var email = result.map((x) => x.email)[0];
-      var phone = result.map((x) => x.phone)[0];
+    fetch("https://randomuser.me/api/")
+      .then(function (response) {
+        console.log("nPerson1 function running")
+        return response.json();
 
-      var nameArr = result.map((x) => x.name);
-      var firstName = nameArr.map((x) => x.first)[0];
-      var titleName = nameArr.map((x) => x.title)[0];
-      var lastName = nameArr.map((x) => x.last)[0];
+      })
+      .then(function (response) {
+        rPersonAPI1 = response;
+        var result = rPersonAPI1.results;
+        var gender = result.map((x) => x.gender)[0];
+        var email = result.map((x) => x.email)[0];
+        var phone = result.map((x) => x.phone)[0];
 
-      console.log(response, result);
-      console.log(gender, titleName, firstName, lastName);
-      changePerson(firstName, lastName, gender, phone, email);
-    });
-}
+        var nameArr = result.map((x) => x.name);
+        var firstName = nameArr.map((x) => x.first)[0];
+        var titleName = nameArr.map((x) => x.title)[0];
+        var lastName = nameArr.map((x) => x.last)[0];
 
-function changePerson(firstName, lastName, gender, phone, email) {
-  var cardPerson = document.querySelector(".cardcontent");
-  gender = gender.toUpperCase();
-  cardPerson.innerText = `${firstName} ${lastName}, ${gender}, 
+        var pictureArr = result.map((x) => x.picture);
+        var picture = pictureArr.map((x) => x.large)[0];
+
+        console.log(response, result, picture);
+        console.log(gender, titleName, firstName, lastName);
+        /* calls changePerson function from below */
+        changePerson1(firstName, lastName, gender, phone, email, picture);
+        console.log("--------nPerson1 FUNC DONE-----------")
+      });
+  }
+
+   function changePerson1(
+    firstName,
+    lastName,
+    gender,
+    phone,
+    email,
+    picture
+  ) {
+    var cardPerson = document.querySelector(".cardcontent1");
+    document.querySelector(
+      ".cardtitle1"
+    ).innerText = `${firstName} ${lastName}`;
+    document.getElementById("image1").src = picture;
+    gender = gender.toUpperCase();
+    cardPerson.innerText = `${gender}, 
+      PHONE: ${phone}, EMAIL: ${email}`;
+  }
+  
+  nextPerson1();
+
+
+  /* END CARD 1 */
+  /* ------------------CARD 2------------------------ */
+   function nextPerson2() {
+    let rPersonAPI2 = {};
+    /* need to select results(array) from Object, deconstruct the returned json
+and take name, email address, birthday etc. */
+    fetch("https://randomuser.me/api/")
+      .then(function (response) {
+        console.log("nPerson2 FUNCTION RUNNING")
+        return response.json();
+      })
+      .then(function (response) {
+        rPersonAPI2 = response;
+        var result = rPersonAPI2.results;
+        var gender = result.map((x) => x.gender)[0];
+        var email = result.map((x) => x.email)[0];
+        var phone = result.map((x) => x.phone)[0];
+
+        var nameArr = result.map((x) => x.name);
+        var firstName = nameArr.map((x) => x.first)[0];
+        var titleName = nameArr.map((x) => x.title)[0];
+        var lastName = nameArr.map((x) => x.last)[0];
+
+        var pictureArr = result.map((x) => x.picture);
+        var picture = pictureArr.map((x) => x.large)[0];
+
+        console.log(response, result, picture);
+        console.log(gender, titleName, firstName, lastName);
+        changePerson2(firstName, lastName, gender, phone, email, picture);
+        console.log("--------nPerson2 FUNC DONE----------")
+      });
+  }
+
+   function changePerson2(
+    firstName,
+    lastName,
+    gender,
+    phone,
+    email,
+    picture
+  ) {
+    var cardPerson = document.querySelector(".cardcontent2");
+    document.querySelector(
+      ".cardtitle2"
+    ).innerText = `${firstName} ${lastName}`;
+    document.getElementById("image2").src = picture;
+    gender = gender.toUpperCase();
+    cardPerson.innerText = `${gender}, 
   PHONE: ${phone}, EMAIL: ${email}`;
+  }
+  nextPerson2();
+
+
+  /* END CARD 2 */
+  /* ---------------------------CARD 3------------------------ */
+   function nextPerson3() {
+    let rPersonAPI = {};
+    /* need to select results(array) from Object, deconstruct the returned json
+and take name, email address, birthday etc. */
+    fetch("https://randomuser.me/api/")
+      .then(function (response) {
+        console.log("nPerson3 function running")
+        return response.json();
+      })
+      .then(function (response) {
+        rPersonAPI = response;
+        var result = rPersonAPI.results;
+        var gender = result.map((x) => x.gender)[0];
+        var email = result.map((x) => x.email)[0];
+        var phone = result.map((x) => x.phone)[0];
+
+        var nameArr = result.map((x) => x.name);
+        var firstName = nameArr.map((x) => x.first)[0];
+        var titleName = nameArr.map((x) => x.title)[0];
+        var lastName = nameArr.map((x) => x.last)[0];
+
+        var pictureArr = result.map((x) => x.picture);
+        var picture = pictureArr.map((x) => x.large)[0];
+
+        console.log(response, result, picture);
+        console.log(gender, titleName, firstName, lastName);
+        changePerson3(firstName, lastName, gender, phone, email, picture);
+      });
+  }
+
+   function changePerson3(
+    firstName,
+    lastName,
+    gender,
+    phone,
+    email,
+    picture
+  ) {
+    var cardPerson = document.querySelector(".cardcontent3");
+    document.querySelector(
+      ".cardtitle3"
+    ).innerText = `${firstName} ${lastName}`;
+    document.getElementById("image3").src = picture;
+    gender = gender.toUpperCase();
+    cardPerson.innerText = `${gender}, 
+  PHONE: ${phone}, EMAIL: ${email}`;
+  }
+  nextPerson3();
+
+
+  /* END CARD3 */
 }
 
-/* TODO: fetch new person for other 2 cards */
+/* TODO: fetch image and use it, fetch new person for other 2 cards */
 
 /* JAVASCRIPT IS OBVIOUSLY YOUR WEAKNESS, GET BETTER AT THIS */
 

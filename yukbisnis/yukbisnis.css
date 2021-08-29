@@ -291,7 +291,7 @@ nav {
   box-shadow: 10px 10px 0 black;
   height: 310px;
   width: 230px;
-  cursor: pointer;
+  cursor: default;
   font-size: 110%;
 }
 
@@ -393,6 +393,7 @@ nav {
 
 #oneModal.active {
   opacity: 1;
+  cursor: pointer;
 }
 
 #twoModal {
@@ -402,6 +403,7 @@ nav {
 
 #twoModal.active {
   opacity: 1;
+  cursor: pointer;
 }
 
 #thirdModal {
@@ -411,6 +413,7 @@ nav {
 
 #thirdModal.active {
   opacity: 1;
+  cursor: pointer;
 }
 
 #modalButton {
