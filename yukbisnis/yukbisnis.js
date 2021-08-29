@@ -3,8 +3,6 @@ function PERSON() {
   /* ------------------------CARD 1---------------------------- */
    function nextPerson1() {
     let rPersonAPI1 = {};
-    /* need to select results(array) from Object, deconstruct the returned json
-and take name, email address, birthday etc. */
     fetch("https://randomuser.me/api/")
       .then(function (response) {
         console.log("nPerson1 function running")
@@ -59,8 +57,6 @@ and take name, email address, birthday etc. */
   /* ------------------CARD 2------------------------ */
    function nextPerson2() {
     let rPersonAPI2 = {};
-    /* need to select results(array) from Object, deconstruct the returned json
-and take name, email address, birthday etc. */
     fetch("https://randomuser.me/api/")
       .then(function (response) {
         console.log("nPerson2 FUNCTION RUNNING")
@@ -112,8 +108,6 @@ and take name, email address, birthday etc. */
   /* ---------------------------CARD 3------------------------ */
    function nextPerson3() {
     let rPersonAPI = {};
-    /* need to select results(array) from Object, deconstruct the returned json
-and take name, email address, birthday etc. */
     fetch("https://randomuser.me/api/")
       .then(function (response) {
         console.log("nPerson3 function running")
@@ -163,9 +157,7 @@ and take name, email address, birthday etc. */
   /* END CARD3 */
 }
 
-/* TODO: fetch image and use it, fetch new person for other 2 cards */
 
-/* JAVASCRIPT IS OBVIOUSLY YOUR WEAKNESS, GET BETTER AT THIS */
 
 /*---------------BUTTON FUNCTIONALITY----------------- */
 class actualModal {
@@ -204,7 +196,3 @@ openModalbtn.addEventListener("click", function (event) {
     modal.closeModal();
   }
 });
-
-// document.querySelector(".buttonClose").addEventListener("click", function () {
-//   modal.closeModal();
-// });
