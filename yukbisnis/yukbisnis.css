@@ -292,6 +292,7 @@ nav {
   box-shadow: 10px 10px 0 black;
   height: 28em;
   width: 20em;
+  font-size: 101%;
   cursor: default;
   /* font-size: 100%; */
 }
@@ -301,16 +302,18 @@ nav {
   color: black;
 }
 
-.cardtitle {
+.cardtitle1, .cardtitle2, .cardtitle3 {
   padding-bottom: 2%;
   font-size: 125%;
   text-align: center;
+  cursor: text;
 }
 
-.cardcontent {
+.cardcontent1, .cardcontent2, .cardcontent3 {
   text-align: center;
-  font-size: 90%;
+  font-size: 100%;
   text-overflow: ellipsis;
+  cursor: text;
 }
 
 .cardfooter {
