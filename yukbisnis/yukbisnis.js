@@ -1,12 +1,4 @@
 /*---------------PERSON FUNCTIONALITY----------------- */
-function wait(ms) {
-  var start = new Date().getTime();
-  var end = start;
-  while (end < start + ms) {
-    end = new Date().getTime();
-  }
-}
-
 function PERSON() {
   /* ------------------------CARD 1---------------------------- */
    function nextPerson1() {
@@ -188,6 +180,7 @@ class actualModal {
     this.modal1.classList.add("active");
     this.modal2.classList.add("active");
     this.modal3.classList.add("active");
+    window.scrollTo(0,400)
   }
 
   closeModal() {

@@ -65,11 +65,12 @@
 /*Normal CSS*/
 html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: #032f3a; /*comment*/
-  opacity: "0";
+  /* opacity: 0; */
   height: 300%; /* percentages only work when parent has value */
 }
 
@@ -274,12 +275,12 @@ nav {
     text-shadow: -8px 5px 0 white;
   }
 }
-
+/* -----------------------CARDS----------------------- */
 .cards {
   display: inline-block;
   background-color: white;
-  height: 300px;
-  width: 225px;
+  height: 26em;
+  width: 18em;
   border: 2px solid black;
   border-radius: 5px;
   margin: 20px;
@@ -289,10 +290,10 @@ nav {
 
 .cards:hover {
   box-shadow: 10px 10px 0 black;
-  height: 310px;
-  width: 230px;
+  height: 28em;
+  width: 20em;
   cursor: default;
-  font-size: 110%;
+  /* font-size: 100%; */
 }
 
 .cardtext {
@@ -381,14 +382,9 @@ nav {
   }
 }
 
-/* ------------------------------------------ */
-/*             EVERYTHING BELOW IS            */
-/*             FOR actualModal.html           */
-/* ------------------------------------------ */
-
 #oneModal {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  /* transition: opacity 0.5s ease-in-out; */
 }
 
 #oneModal.active {
@@ -398,7 +394,7 @@ nav {
 
 #twoModal {
   opacity: 0;
-  transition: opacity 0.75s ease-in-out;
+  /* transition: opacity 0.75s ease-in-out; */
 }
 
 #twoModal.active {
@@ -408,13 +404,15 @@ nav {
 
 #thirdModal {
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  /* transition: opacity 1s ease-in-out; */
 }
 
 #thirdModal.active {
   opacity: 1;
   cursor: pointer;
 }
+
+
 
 #modalButton {
   font-family: Arial;
@@ -452,7 +450,7 @@ body header h1 {
   flex-direction: column;
 }
 
-@media (min-width: 833px) {
+@media (min-width: 1055px) {
   .cardWrapper {
     display: initial;
   }
