@@ -1,2 +1,9 @@
-# publicProjects
-Place for me to host files publicly.
+# C++
+## what is this?
+all my cpp files from university.
+
+## why?
+for memories!
+
+## tech used
+c++
